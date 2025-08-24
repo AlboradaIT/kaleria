@@ -49,7 +49,9 @@ services:
     labels:
       - 'traefik.enable=true'
       - 'traefik.docker.network=traefik'
-      - 'traefik.http.routers.nginx.rule=Host(`kaleria.local`)'
+      - 'traefik.http.routers.nginx.rule=HostRegexp(`.+\.kaleria\.local`)'
+      - traefik.http.routers.nginx.tls.domains[0].main=kaleria.local
+      - traefik.http.routers.nginx.tls.domains[0].sans=*.kaleria.local
       - 'traefik.http.routers.nginx.entrypoints=web,websecure'
       - 'traefik.http.routers.nginx.tls=true'
       # For production with real domains, uncomment the next line and configure Let's Encrypt in Traefik

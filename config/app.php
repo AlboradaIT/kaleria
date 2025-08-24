@@ -56,6 +56,20 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Domain Configuration
+    |--------------------------------------------------------------------------
+    |
+    | These values determine the domains for admin and worker interfaces.
+    | This allows the application to serve different interfaces based on
+    | the domain being accessed.
+    |
+    */
+
+    'admin_domain' => env('ADMIN_DOMAIN', 'admin.kaleria.local'),
+    'worker_domain' => env('WORKER_DOMAIN', 'worker.kaleria.local'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Timezone
     |--------------------------------------------------------------------------
     |
